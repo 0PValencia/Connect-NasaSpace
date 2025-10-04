@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Terra Bolivia - Explorando Ciencias de la Tierra</title>
+    <meta name="description" content="Explora datos históricos de ciencias de la Tierra del satélite Terra de la NASA en Bolivia" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Panel de Login -->
+    <div id="login-panel">
+      <h3>🚀 Acceso NASA Terra</h3>
+      <input type="email" id="correo" placeholder="📧 Correo electrónico" required />
+      <input type="text" id="apodo" placeholder="👤 Apodo" required />
+      <button onclick="registrar()">📝 Registrar</button>
+      <button onclick="login()">🔑 Login</button>
+      <div id="login-msg"></div>
+    </div>
+
+    <!-- Panel lateral para datos -->
+    <div id="side-panel">
+      <h3>🌍 Eventos de la Tierra</h3>
+      <div id="eventos">
+        <div style="text-align: center; color: #7f8c8d; padding: 20px;">
+          <p>🗺️ Selecciona un departamento para explorar datos históricos de la NASA</p>
+          <br>
+          <p style="font-size: 0.8em;">Datos disponibles:</p>
+          <ul style="text-align: left; font-size: 0.8em; margin-top: 10px;">
+            <li>🔥 Incendios forestales</li>
+            <li>🌱 Cobertura vegetal</li>
+            <li>🏔️ Glaciares y nieve</li>
+            <li>🌫️ Contaminación del aire</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div id="map"></div>
+
+    <!-- Loading indicator (hidden by default) -->
+    <div id="loading" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; padding: 20px; border-radius: 10px; z-index: 2000;">
+      <div style="text-align: center;">
+        <div style="font-size: 2em; margin-bottom: 10px;">🛰️</div>
+        <div>Cargando datos de la NASA...</div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>

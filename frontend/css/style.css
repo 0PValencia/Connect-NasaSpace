@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+}
+
+/* Panel de Login */
+#login-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#login-panel h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* Panel Lateral */
+#side-panel {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#side-panel h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.4em;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+/* Controles del Mapa */
+.controles-mapa {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.controles-mapa h4 {
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+
+.controles-mapa label {
+  display: block;
+  margin: 8px 0;
+  color: #34495e;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+
+.controles-mapa input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+/* Lista de Departamentos */
+.departamentos-lista {
+  margin-bottom: 20px;
+}
+
+.departamentos-lista h4 {
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+
+.btn-depto {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 6px 0;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-depto:hover {
+  background: linear-gradient(135deg, #2980b9, #1f618d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Resumen del Departamento */
+.resumen-depto {
+  background: rgba(46, 204, 113, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #2ecc71;
+}
+
+.resumen-depto h4 {
+  color: #27ae60;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.resumen-depto p {
+  margin: 5px 0;
+  color: #2c3e50;
+  font-size: 0.9em;
+}
+
+/* Eventos Detalle */
+.eventos-detalle {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.eventos-detalle h4 {
+  color: #e74c3c;
+  margin: 15px 0 8px 0;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.evento-item {
+  background: rgba(236, 240, 241, 0.8);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border-left: 3px solid #95a5a6;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+.evento-item strong {
+  color: #2c3e50;
+}
+
+.evento-item small {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Formularios */
+input, button {
+  padding: 12px 15px;
+  margin: 6px 0;
+  border: 2px solid #e0e6ed;
+  border-radius: 8px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2980b9, #1f618d);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Mensajes */
+#login-msg {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  text-align: center;
+  min-height: 20px;
+}
+
+/* Iconos personalizados para Leaflet */
+.icono-incendio, .icono-ndvi, .icono-glaciar, .icono-contaminacion {
+  background: transparent !important;
+  border: none !important;
+  font-size: 18px;
+}
+
+/* Scrollbar personalizado */
+#side-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+#side-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+#side-panel::-webkit-scrollbar-thumb {
+  background: rgba(52, 152, 219, 0.5);
+  border-radius: 3px;
+}
+
+#side-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 152, 219, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #side-panel {
+    width: 300px;
+    left: 10px;
+    top: 10px;
+  }
+  
+  #login-panel {
+    right: 10px;
+    top: 10px;
+    min-width: 250px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.evento-item, .resumen-depto {
+  animation: fadeIn 0.3s ease-out;
+}
